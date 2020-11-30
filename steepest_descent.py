@@ -20,7 +20,10 @@ def steepest_descent(params, func, init_values, stop_condition=1e-10):
 
 
 if __name__ == '__main__':
+    #x1, x2 = symbols('x1, x2')
+    #f = (x1 ** 3 - x2) ** 2 + 2 * (x2 - x1) ** 4
+    #params, f_value = steepest_descent((x1, x2), f, [-0., -1.])
     x1, x2 = symbols('x1, x2')
-    f = (x1 ** 3 - x2) ** 2 + 2 * (x2 - x1) ** 4
-    params, f_value = steepest_descent((x1, x2), f, [-0., -1.])
+    f = (6 + x1 + x2) ** 2 + (2 - 3 * x1 - 3 * x2 - x1 * x2) ** 2
+    params, f_value = steepest_descent([x1, x2], f, [-4, 6], 1e-3)
     print('final params: {}  final f value: {}'.format(params, f_value))

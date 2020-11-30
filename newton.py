@@ -19,7 +19,9 @@ def newton(params, func, init_values, stop_condition=1e-2):
 
 
 if __name__ == '__main__':
+    #x1, x2 = symbols('x1, x2')
+    #f = (x1 ** 3 - x2) ** 2 + 2 * (x2 - x1) ** 4
     x1, x2 = symbols('x1, x2')
-    f = (x1 ** 3 - x2) ** 2 + 2 * (x2 - x1) ** 4
-    params, f_value = newton((x1, x2), f, [-0., -1.])
+    f = (6 + x1 + x2) ** 2 + (2 - 3 * x1 - 3 * x2 - x1 * x2) ** 2
+    params, f_value = newton([x1, x2], f, [-4, 6], 1e-3)
     print('final params: {}  final f value: {}'.format(params, f_value))
